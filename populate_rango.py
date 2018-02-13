@@ -1,11 +1,8 @@
 import os
 
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tango_with_django_project.settings')
 
-
 import django
-
 
 django.setup()
 from rango.models import Category, Page
@@ -18,7 +15,6 @@ def populate():
          "views": 70},
         {"title": "Learn Python in 10 Minutes", "url": "http://www.korokithakis.net/tutorials/python/", "views": 50}
     ]
-
 
     django_pages = [
         {"title": "Official Django Tutorial", "url": "https://docs.djangoproject.com/en/1.9/intro/tutorial01/",
@@ -60,6 +56,7 @@ def add_cat(name, views=0, likes=0):
     c.likes = likes
     c.save()
     return c
+
 
 if __name__ == '__main__':
     print("Starting Rango population script...")
